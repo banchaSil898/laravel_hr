@@ -12,7 +12,7 @@ class Login extends Component
 {
     public LoginForm $form;
 
-    public function Login(): void
+    public function login(): void
     {
         $this->validate();
 
