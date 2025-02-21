@@ -39,9 +39,6 @@
                 <button class="w-full mt-6 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition">
                     {{ __('log_in') }}
                 </button>
-                <x-primary-button class="w-full mt-6 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition">
-                    {{ __('log_in') }}
-                </x-primary-button>
             </form>
         </div>
     </div>
