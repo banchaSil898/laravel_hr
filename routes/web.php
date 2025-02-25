@@ -17,7 +17,7 @@ Route::domain("admin.$domain")->group(function () {
     // ถ้า Login แล้ว ให้ไปหน้า Dashboard ของ Admin
     Route::middleware('auth')->group(function () {
         Route::get('/', function () {
-            dd(Auth::check(), Auth::user(), session()->all());
+            // dd(Auth::check(), Auth::user(), session()->all());
             return redirect()->route('admin.dashboard');
         });
 
