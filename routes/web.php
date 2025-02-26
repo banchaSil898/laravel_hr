@@ -5,6 +5,9 @@ use App\Livewire\Admin\Auth\Login as AdminLogin;
 use App\Livewire\Emp\Auth\Login as EmpLogin;
 use App\Livewire\Admin\Announcement\Main as AdminAnnouncement;
 use App\Livewire\Admin\Calendar\Main as AdminCalendar;
+use App\Livewire\Admin\Download\Main as AdminDownload;
+use App\Livewire\Admin\Employee\Main as AdminEmployee;
+use App\Livewire\Admin\Service\Main as AdminService;
 use App\Livewire\Admin\Dashboard\Main as AdminDashboard;
 use App\Livewire\Emp\Dashboard\Main as EmployeeDashboard;
 
@@ -25,6 +28,9 @@ Route::prefix("admin")->group(function () {
 
         Route::get('/announcement', AdminAnnouncement::class)->name('admin.announcement');
         Route::get('/calendar', AdminCalendar::class)->name('admin.calendar');
+        Route::get('/download', AdminDownload::class)->name('admin.download');
+        Route::get('/employee', AdminEmployee::class)->name('admin.employee');
+        Route::get('/service', AdminService::class)->name('admin.service');
     });
 });
 
