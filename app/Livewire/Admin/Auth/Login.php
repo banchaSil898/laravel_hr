@@ -20,7 +20,7 @@ class Login extends Component
 
         Session::regenerate();
 
-        $this->redirectIntended(route('admin.dashboard'), navigate: true);
+        $this->redirectIntended(route('admin.announcement'), navigate: true);
     }
     
     public function render()

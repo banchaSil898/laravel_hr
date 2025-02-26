@@ -22,7 +22,7 @@ class RedirectIfAuthenticated
             $subdomain = explode('.', $request->getHost())[0];
             // ถ้าเป็น admin ให้ redirect ไป admin dashboard
             if ($subdomain === 'admin') {
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('admin.announcement');
             }
             // ถ้าเป็น employee ให้ redirect ไป employee dashboard
             elseif ($subdomain === 'employee') {

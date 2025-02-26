@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Livewire\Admin\Announcement;
+namespace App\Livewire\Admin\Calendar;
 
-use Livewire\Attributes\Layout;
 use Livewire\Component;
+use Livewire\Attributes\Layout;
 
 #[Layout('layouts.admin')]
 class Main extends Component
 {
     public function render()
     {
-        return view('livewire.admin.announcement.main');
+        return view('livewire.admin.calendar.main');
     }
 }

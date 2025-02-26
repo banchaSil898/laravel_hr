@@ -3,13 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Admin\Auth\Login as AdminLogin;
 use App\Livewire\Emp\Auth\Login as EmpLogin;
+use App\Livewire\Admin\Announcement\Main as AdminAnnouncement;
+use App\Livewire\Admin\Calendar\Main as AdminCalendar;
 use App\Livewire\Admin\Dashboard\Main as AdminDashboard;
 use App\Livewire\Emp\Dashboard\Main as EmployeeDashboard;
 
 $domain = env('APP_DOMAIN', 'matichonhr.test');
 
 // Route สำหรับ Admin
-Route::domain("admin.$domain")->group(function () {
+Route::prefix("admin")->group(function () {
     // ถ้ายังไม่ได้ Login ให้ไปหน้า Login ของ Admin
     Route::middleware('guest')->group(function () {
         Route::get('/login', AdminLogin::class)->name('admin.login');
@@ -18,15 +20,16 @@ Route::domain("admin.$domain")->group(function () {
     Route::middleware('auth')->group(function () {
         Route::get('/', function () {
             // dd(Auth::check(), Auth::user(), session()->all());
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('admin.announcement');
         });
 
-        Route::get('/dashboard', AdminDashboard::class)->name('admin.dashboard');
+        Route::get('/announcement', AdminAnnouncement::class)->name('admin.announcement');
+        Route::get('/calendar', AdminCalendar::class)->name('admin.calendar');
     });
 });
 
 // Route สำหรับ Employee
-Route::domain("employee.$domain")->group(function () {
+Route::prefix("/")->group(function () {
     // ถ้ายังไม่ได้ Login ให้ไปหน้า Login ของ Employee
     Route::middleware('guest')->group(function () {
         Route::get('/login', EmpLogin::class)->name('emp.login');
